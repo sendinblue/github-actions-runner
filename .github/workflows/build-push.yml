@@ -44,3 +44,10 @@ jobs:
 
       - name: Image digest
         run: echo ${{ steps.docker-build.outputs.digest }}
+
+      - name: Test
+        run: |
+          less --version
+          nano --version
+          kustomize version
+          kubectl version --client=true
